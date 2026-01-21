@@ -3,105 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programming Languages Hub</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>CodeHub - Programming Languages Explorer</title>
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">
-                <i class="fas fa-code me-2"></i>
-                Programming Hub
-            </a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="brand-text">CodeHub</span>
+            </div>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#languages" class="nav-link">Languages</a>
+                <a href="#comparison" class="nav-link">Compare</a>
+                <a href="#resources" class="nav-link">Resources</a>
+                <a href="#about" class="nav-link">About</a>
+                
+                <div class="nav-auth">
+                    <button class="auth-btn" id="authLink">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </button>
+                    <div class="user-menu hidden" id="userInfo">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <span class="user-name" id="welcomeText">Welcome</span>
+                        <button class="logout-btn" id="logoutLink">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
             
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#languages">Languages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#comparison">Compare</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#resources">Resources</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-grid"></div>
+            <div class="hero-particles"></div>
+        </div>
+        
         <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6">
-                    <h1 class="hero-title mb-4">
-                        Explore the World of 
-                        <span class="text-primary">Programming Languages</span>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Explore the World of
+                        <span class="gradient-text">Programming</span>
                     </h1>
-                    <p class="hero-subtitle mb-4">
-                        Discover, compare, and learn about popular programming languages. 
-                        From beginner-friendly Python to performance-focused C++, find the perfect language for your next project.
+                    <p class="hero-subtitle">
+                        Discover, compare, and master programming languages. From beginner-friendly Python 
+                        to performance-focused C++, find the perfect language for your next project.
                     </p>
-                    <div class="hero-buttons">
-                        <a href="#languages" class="btn btn-primary btn-lg me-3">
-                            <i class="fas fa-rocket me-2"></i>
+                    <div class="hero-actions">
+                        <a href="#languages" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
                             Explore Languages
                         </a>
-                        <a href="#comparison" class="btn btn-outline-primary btn-lg">
-                            <i class="fas fa-balance-scale me-2"></i>
+                        <a href="#comparison" class="btn btn-secondary">
+                            <i class="fas fa-balance-scale"></i>
                             Compare Languages
                         </a>
                     </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Languages</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Features</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Possibilities</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="hero-image">
-                        <div class="code-window">
-                            <div class="code-header">
-                                <div class="code-dots">
-                                    <span class="dot red"></span>
-                                    <span class="dot yellow"></span>
-                                    <span class="dot green"></span>
-                                </div>
+                
+                <div class="hero-visual">
+                    <div class="code-editor">
+                        <div class="editor-header">
+                            <div class="editor-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="editor-title">welcome.js</div>
+                        </div>
+                        <div class="editor-content">
+                            <div class="line-numbers">
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                                <span>4</span>
+                                <span>5</span>
+                                <span>6</span>
+                                <span>7</span>
+                                <span>8</span>
+                                <span>9</span>
                             </div>
                             <div class="code-content">
-                                <pre class="code-snippet">
-<span class="code-comment">// Welcome to Programming Hub</span>
-<span class="code-keyword">function</span> <span class="code-function">exploreLanguages</span>() {
-    <span class="code-keyword">const</span> languages = [
-        <span class="code-string">'JavaScript'</span>,
-        <span class="code-string">'Python'</span>,
-        <span class="code-string">'Java'</span>,
-        <span class="code-string">'C++'</span>
-    ];
-    
-    <span class="code-keyword">return</span> languages.<span class="code-function">map</span>(lang => 
-        <span class="code-template">`Learn ${lang} today!`</span>
-    );
-}
-                                </pre>
+                                <div class="code-line">
+                                    <span class="comment">// Welcome to CodeHub</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="keyword">const</span> <span class="variable">languages</span> <span class="operator">=</span> <span class="bracket">[</span>
+                                </div>
+                                <div class="code-line">
+                                    &nbsp;&nbsp;<span class="string">'JavaScript'</span><span class="punctuation">,</span>
+                                </div>
+                                <div class="code-line">
+                                    &nbsp;&nbsp;<span class="string">'Python'</span><span class="punctuation">,</span>
+                                </div>
+                                <div class="code-line">
+                                    &nbsp;&nbsp;<span class="string">'Java'</span><span class="punctuation">,</span>
+                                </div>
+                                <div class="code-line">
+                                    &nbsp;&nbsp;<span class="string">'C++'</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="bracket">];</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="keyword">console</span><span class="punctuation">.</span><span class="method">log</span><span class="bracket">(</span><span class="string">'Start coding!'</span><span class="bracket">);</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="cursor">|</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -110,153 +160,182 @@
         </div>
     </section>
 
-    <!-- Search and Filter Section -->
-    <section class="search-section py-5 bg-light">
+    <!-- Search Section -->
+    <section class="search-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="search-container">
-                        <div class="input-group mb-4">
-                            <span class="input-group-text">
-                                <i class="fas fa-search"></i>
-                            </span>
-                            <input type="text" class="form-control" id="languageSearch" 
-                                   placeholder="Search programming languages...">
-                        </div>
-                        
-                        <div class="filter-buttons text-center">
-                            <button class="btn btn-outline-primary active me-2 mb-2" data-filter="all">
-                                All Languages
-                            </button>
-                            <button class="btn btn-outline-primary me-2 mb-2" data-filter="web">
-                                Web Development
-                            </button>
-                            <button class="btn btn-outline-primary me-2 mb-2" data-filter="mobile">
-                                Mobile Development
-                            </button>
-                            <button class="btn btn-outline-primary me-2 mb-2" data-filter="system">
-                                System Programming
-                            </button>
-                            <button class="btn btn-outline-primary me-2 mb-2" data-filter="data">
-                                Data Science
-                            </button>
-                        </div>
-                    </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="languageSearch" 
+                           placeholder="Search programming languages...">
+                </div>
+                
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">
+                        <i class="fas fa-globe"></i>
+                        All Languages
+                    </button>
+                    <button class="filter-tab" data-filter="web">
+                        <i class="fas fa-laptop-code"></i>
+                        Web Dev
+                    </button>
+                    <button class="filter-tab" data-filter="mobile">
+                        <i class="fas fa-mobile-alt"></i>
+                        Mobile
+                    </button>
+                    <button class="filter-tab" data-filter="system">
+                        <i class="fas fa-server"></i>
+                        System
+                    </button>
+                    <button class="filter-tab" data-filter="data">
+                        <i class="fas fa-chart-bar"></i>
+                        Data Science
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Languages Section -->
-    <section id="languages" class="languages-section py-5">
+    <section id="languages" class="languages-section">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="section-title text-center mb-5">Popular Programming Languages</h2>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">Popular Programming Languages</h2>
+                <p class="section-subtitle">Discover the most in-demand programming languages and their unique features</p>
             </div>
             
-            <div class="row" id="languageCards">
+            <div class="languages-grid" id="languageCards">
                 <!-- Language cards will be dynamically generated by JavaScript -->
             </div>
         </div>
     </section>
 
     <!-- Comparison Section -->
-    <section id="comparison" class="comparison-section py-5 bg-light">
+    <section id="comparison" class="comparison-section">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="section-title text-center mb-5">Language Comparison Tool</h2>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">Language Comparison Tool</h2>
+                <p class="section-subtitle">Compare programming languages side by side to make informed decisions</p>
             </div>
             
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="comparison-container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="comparison-selector">
-                                    <label class="form-label">Select First Language:</label>
-                                    <select class="form-select" id="compareLanguage1">
-                                        <option value="">Choose a language...</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="comparison-selector">
-                                    <label class="form-label">Select Second Language:</label>
-                                    <select class="form-select" id="compareLanguage2">
-                                        <option value="">Choose a language...</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div id="comparisonResult" class="comparison-result mt-4">
-                            <!-- Comparison results will be displayed here -->
+            <div class="comparison-container">
+                <div class="comparison-selectors">
+                    <div class="selector-group">
+                        <label class="selector-label">First Language</label>
+                        <div class="custom-select">
+                            <select id="compareLanguage1">
+                                <option value="">Choose a language...</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
                         </div>
                     </div>
+                    
+                    <div class="vs-divider">
+                        <span>VS</span>
+                    </div>
+                    
+                    <div class="selector-group">
+                        <label class="selector-label">Second Language</label>
+                        <div class="custom-select">
+                            <select id="compareLanguage2">
+                                <option value="">Choose a language...</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="comparisonResult" class="comparison-result">
+                    <!-- Comparison results will be displayed here -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Resources Section -->
-    <section id="resources" class="resources-section py-5">
+    <section id="resources" class="resources-section">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="section-title text-center mb-5">Learning Resources</h2>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">Learning Resources</h2>
+                <p class="section-subtitle">Curated resources to accelerate your programming journey</p>
             </div>
             
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h4>Documentation</h4>
-                        <p>Official documentation and guides for each programming language.</p>
-                        <ul class="resource-links">
-                            <li><a href="https://docs.python.org/" target="_blank">Python Docs</a></li>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript MDN</a></li>
-                            <li><a href="https://docs.oracle.com/en/java/" target="_blank">Java Docs</a></li>
-                            <li><a href="https://en.cppreference.com/" target="_blank">C++ Reference</a></li>
-                        </ul>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book-open"></i>
                     </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h4>Online Courses</h4>
-                        <p>Comprehensive courses and tutorials to master programming languages.</p>
-                        <ul class="resource-links">
-                            <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
-                            <li><a href="https://www.coursera.org/" target="_blank">Coursera</a></li>
-                            <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
-                            <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="resource-card">
-                        <div class="resource-icon">
+                    <h3 class="resource-title">Documentation</h3>
+                    <p class="resource-description">Official documentation and comprehensive guides for each programming language.</p>
+                    <div class="resource-links">
+                        <a href="https://docs.python.org/" target="_blank" class="resource-link">
+                            <i class="fab fa-python"></i>
+                            Python Docs
+                        </a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="resource-link">
+                            <i class="fab fa-js-square"></i>
+                            JavaScript MDN
+                        </a>
+                        <a href="https://docs.oracle.com/en/java/" target="_blank" class="resource-link">
+                            <i class="fab fa-java"></i>
+                            Java Docs
+                        </a>
+                        <a href="https://en.cppreference.com/" target="_blank" class="resource-link">
                             <i class="fas fa-code"></i>
-                        </div>
-                        <h4>Practice Platforms</h4>
-                        <p>Interactive coding platforms to practice and improve your skills.</p>
-                        <ul class="resource-links">
-                            <li><a href="https://leetcode.com/" target="_blank">LeetCode</a></li>
-                            <li><a href="https://www.hackerrank.com/" target="_blank">HackerRank</a></li>
-                            <li><a href="https://www.codewars.com/" target="_blank">Codewars</a></li>
-                            <li><a href="https://exercism.org/" target="_blank">Exercism</a></li>
-                        </ul>
+                            C++ Reference
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="resource-title">Online Courses</h3>
+                    <p class="resource-description">Comprehensive courses and tutorials to master programming languages.</p>
+                    <div class="resource-links">
+                        <a href="https://www.codecademy.com/" target="_blank" class="resource-link">
+                            <i class="fas fa-laptop-code"></i>
+                            Codecademy
+                        </a>
+                        <a href="https://www.coursera.org/" target="_blank" class="resource-link">
+                            <i class="fas fa-university"></i>
+                            Coursera
+                        </a>
+                        <a href="https://www.udemy.com/" target="_blank" class="resource-link">
+                            <i class="fas fa-play-circle"></i>
+                            Udemy
+                        </a>
+                        <a href="https://www.freecodecamp.org/" target="_blank" class="resource-link">
+                            <i class="fas fa-fire"></i>
+                            freeCodeCamp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="resource-title">Practice Platforms</h3>
+                    <p class="resource-description">Interactive coding platforms to practice and improve your programming skills.</p>
+                    <div class="resource-links">
+                        <a href="https://leetcode.com/" target="_blank" class="resource-link">
+                            <i class="fas fa-brain"></i>
+                            LeetCode
+                        </a>
+                        <a href="https://www.hackerrank.com/" target="_blank" class="resource-link">
+                            <i class="fas fa-trophy"></i>
+                            HackerRank
+                        </a>
+                        <a href="https://www.codewars.com/" target="_blank" class="resource-link">
+                            <i class="fas fa-sword"></i>
+                            Codewars
+                        </a>
+                        <a href="https://exercism.org/" target="_blank" class="resource-link">
+                            <i class="fas fa-dumbbell"></i>
+                            Exercism
+                        </a>
                     </div>
                 </div>
             </div>
@@ -264,30 +343,55 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section py-5 bg-dark text-white">
+    <section id="about" class="about-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title mb-4">About Programming Hub</h2>
-                    <p class="lead mb-4">
-                        Programming Hub is your comprehensive guide to understanding and choosing the right programming language 
-                        for your projects. We provide detailed information, comparisons, and resources to help developers of all 
-                        levels make informed decisions.
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About CodeHub</h2>
+                    <p class="about-description">
+                        CodeHub is your comprehensive guide to understanding and choosing the right programming language 
+                        for your projects. We provide detailed information, comparisons, and resources to help developers 
+                        of all levels make informed decisions.
                     </p>
-                    <p class="mb-4">
-                        Whether you're a beginner taking your first steps into coding or an experienced developer exploring new 
-                        languages, our platform offers the insights and tools you need to succeed in your programming journey.
+                    <p class="about-description">
+                        Whether you're a beginner taking your first steps into coding or an experienced developer exploring 
+                        new languages, our platform offers the insights and tools you need to succeed in your programming journey.
                     </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-search"></i>
+                            <span>Comprehensive Language Database</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Side-by-Side Comparisons</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-book"></i>
+                            <span>Curated Learning Resources</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <span>Community Driven</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="stats-card">
+                        <div class="stat-item">
+                            <div class="stat-value">50K+</div>
+                            <div class="stat-label">Developers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">25+</div>
+                            <div class="stat-label">Languages</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">1M+</div>
+                            <div class="stat-label">Comparisons</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -295,23 +399,130 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-dark text-white py-4">
+    <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 Programming Hub. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <span class="brand-text">CodeHub</span>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">Built with <i class="fas fa-heart text-danger"></i> using Bootstrap</p>
+                
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#languages">Languages</a>
+                    <a href="#comparison">Compare</a>
+                    <a href="#resources">Resources</a>
+                    <a href="#about">About</a>
                 </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeHub. All rights reserved.</p>
+                <p>Built with <i class="fas fa-heart"></i> for developers</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-overlay"></div>
+        <div class="auth-modal-content">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <div class="auth-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <button class="auth-close" id="authClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <form class="auth-form" id="authForm">
+                    <h2 class="auth-title" id="formTitle">Welcome Back</h2>
+                    <p class="auth-subtitle" id="formSubtitle">Sign in to your account</p>
+                    
+                    <div class="auth-message" id="authMsg"></div>
+                    
+                    <!-- Username field -->
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="uname" class="auth-input" placeholder=" " required>
+                            <label for="uname" class="input-label">Username</label>
+                            <i class="fas fa-user input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Email field (signup only) -->
+                    <div class="input-group hidden" id="emailField">
+                        <div class="input-wrapper">
+                            <input type="email" id="email" class="auth-input" placeholder=" ">
+                            <label for="email" class="input-label">Email Address</label>
+                            <i class="fas fa-envelope input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Password field -->
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <input type="password" id="pass" class="auth-input" placeholder=" " required>
+                            <label for="pass" class="input-label">Password</label>
+                            <i class="fas fa-lock input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Confirm Password field (signup only) -->
+                    <div class="input-group hidden" id="confirmPassField">
+                        <div class="input-wrapper">
+                            <input type="password" id="confirmPass" class="auth-input" placeholder=" ">
+                            <label for="confirmPass" class="input-label">Confirm Password</label>
+                            <i class="fas fa-lock input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Login options -->
+                    <div class="auth-options" id="loginActions">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" id="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link" id="forgotPassword">Forgot password?</a>
+                    </div>
+                    
+                    <!-- Submit button -->
+                    <button type="submit" class="auth-submit" id="auth-btn" disabled>
+                        <span class="btn-text">Sign In</span>
+                        <i class="fas fa-arrow-right btn-icon"></i>
+                    </button>
+                    
+                    <!-- Toggle mode -->
+                    <div class="auth-toggle">
+                        <span id="toggleText">Don't have an account?</span>
+                        <a href="#" id="toggleMode">Sign up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Custom JS -->
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
